@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const app = express();
 const server = createServer(app);
-const wss = new WebSocketServer({ server });
+const wss = new WebSocketServer({ server, secure: true });
 app.use(bodyParser.json());
 
 wss.on("connection", function connection(ws) {
